@@ -77,8 +77,8 @@
                 <div class="card-header">
                     Lista de personas
                 </div>
-                <div class="p-4">
-                    <table class="table align-middle">
+                <div class="p-4 ">
+                    <table class="table  align-middle">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>

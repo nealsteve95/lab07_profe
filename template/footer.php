@@ -1,4 +1,4 @@
-<footer class="container-fluid bg-dark fixed-bottom">
+<footer class="container-fluid bg-dark">
     <div class="row">
         <div class="col-md text-light text-center py-3">
             Tecsup - 2022

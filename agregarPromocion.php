@@ -21,7 +21,7 @@ $promocion = $sentencia_promocion->fetchAll(PDO::FETCH_OBJ);
                 <div class="card-header">
                     Ingresar datos para Promocion : <br><?php echo $persona->nombres.' '.$persona->apellido_paterno.' '.$persona->apellido_materno; ?>
                 </div>
-                <form class="p-4" method="POST" action="registrarPromocion.php">
+                <form class="p-4" method="POST" action="registrarPromocion.php" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label class="form-label">Promocion: </label>
                         <input type="text" class="form-control" name="txtPromocion" autofocus required>
@@ -29,6 +29,10 @@ $promocion = $sentencia_promocion->fetchAll(PDO::FETCH_OBJ);
                     <div class="mb-3">
                         <label class="form-label">Duración de la Promocion: </label>
                         <input type="text" class="form-control" name="txtDuracion" autofocus required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Subir archivo: </label>
+                        <input class="form-control" type="file" name="ImgPromo" >
                     </div>
                     <div class="d-grid">
                     <input type="hidden" name="codigo" value="<?php echo $persona->id; ?>"><P></P>
@@ -49,6 +53,7 @@ $promocion = $sentencia_promocion->fetchAll(PDO::FETCH_OBJ);
                                 <th scope="col">#</th>
                                 <th scope="col">Promocion</th>
                                 <th scope="col">Duracion</th>
+                                <th scope="col">Imagen</th>
                                 <th scope="col" colspan="3">Opciones</th>
                             </tr>
                         </thead>
@@ -60,6 +65,7 @@ $promocion = $sentencia_promocion->fetchAll(PDO::FETCH_OBJ);
                                     <td scope="row"><?php echo $dato->id; ?></td>
                                     <td><?php echo $dato->promocion; ?></td>
                                     <td><?php echo $dato->duracion; ?></td>
+                                    <td><img width="30px" height="30px" src="data:image/jpeg;base64,<?php echo base64_encode($dato->imagen); ?>" alt="Imagen de promoción"></td>
                                     <td><a class="text-primary" href="enviarMensaje.php?codigo=<?php echo $dato->id; ?>"><i class="bi bi-cursor"></i></a></td>
                                 </tr>
                             <?php

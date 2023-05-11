@@ -15,10 +15,9 @@ create table promociones(
     promocion varchar(200) default null,
     duracion varchar(200) default null,
     id_persona int not null,
+    imagen longblob DEFAULT NULL,
+    img_name varchar(40) DEFAULT NULL,
     primary key(id),
     key fk_promociones_1_idx (id_persona),
     constraint fk_promociones_1 foreign key (id_persona) references persona (id)
 );
-
-
-

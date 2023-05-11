@@ -28,7 +28,7 @@ $persona = $sentencia->fetch(PDO::FETCH_OBJ);
     CURLOPT_POSTFIELDS => array(
         'chatId' => "51".$persona->celular."@c.us",
         'caption' => 'Estimado(a) *'.strtoupper($persona->nombres).' '.strtoupper($persona->apellido_paterno).' '.strtoupper($persona->apellido_materno).'* No se pierda *'.strtoupper($persona->promocion).'* valido solo *'.$persona->duracion.'*',
-        'file' => curl_file_create('Imagen/descarga.jpg', 'image/jpeg', 'descarga.jpg')
+        'file' => curl_file_create('Imagen/mrrobot.jpg', 'image/jpeg', 'mrrobot.jpg')
     ),
     CURLOPT_HTTPHEADER => array(
         "cache-control: no-cache",
